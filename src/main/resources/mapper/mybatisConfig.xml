@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.ssafy.boot.member.model.MemberDto"
+			alias="memberdto" />
+		<typeAlias type="com.ssafy.boot.file.model.FileDto"
+			alias="filedto" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mapper/member.xml" />
+		<mapper resource="mapper/file.xml" />
+	</mappers>
+</configuration>

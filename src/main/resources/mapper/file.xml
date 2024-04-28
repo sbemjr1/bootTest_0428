@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.boot.file.repository.FileMapper">
+	<select id="list" resultType="fileDto">
+		select *
+		from fileInfo
+	</select>
+	
+    <insert id="add" parameterType="java.util.List">
+        insert into fileInfo (name, path) values
+        <foreach collection="list" item="file" separator=",">
+            (#{file.name}, #{file.path})
+        </foreach>
+    </insert>
+    
+    <select id="file" resultType="fileDto">
+    	select *
+    	from fileInfo
+    	where id = #{id}
+    </select>
+    
+</mapper>
